@@ -1,5 +1,28 @@
+<script setup>
+import { NuxtPage } from '#components';
+
+useHead({
+  title: 'Chae - Bojoku',
+  meta: [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1',
+    },
+  ],
+})
+</script>
+
 <template>
-  <h1 class="text-3xl font-bold underline bg-red-400">
-    Hello world!
-  </h1>
+  <div class="min-h-screen">
+    <!-- <NuxtRouteAnnouncer /> -->
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+</style>
