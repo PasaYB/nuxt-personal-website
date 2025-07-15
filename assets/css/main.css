@@ -1,1 +1,24 @@
+@import url('./fonts.css');
 @import "tailwindcss";
+
+.font-rampung {
+  font-family: 'rampung', serif;
+}
+
+.font-bingtea {
+  font-family: 'bingtea', serif;
+}
+
+.font-komika {
+  font-family: 'komika', serif;
+}
+
+.font-badaboom {
+  font-family: 'badaboom', serif;
+}
+.font-barber {
+  font-family: 'barber', serif;
+}
+.font-space_comic {
+  font-family: 'space_comic', serif;
+}

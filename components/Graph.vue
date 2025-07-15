@@ -1,5 +1,6 @@
 <template>
     <div class="bg-[#B22222] w-[600px] h-[350px] rounded-3xl shadow-2xl p-8 text-white">
+        <slot/>
         <h1 class="text-2xl font-extrabold mb-4">Where I am Fluent</h1>
         <ul class="list-none">
         <li class="mb-[25px]" v-for="skill in skills" :key="skill.name">

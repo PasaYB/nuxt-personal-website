@@ -1,25 +1,72 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+
 const isOpen = ref(false)
-const sections = ['home', 'about', 'project', 'contact']
+const sections = ['home', 'profile', 'about', 'project', 'contact']
+const currentSection = ref('home')
+
+// Define which sections have dark backgrounds (requiring light text)
+// You can easily modify this array to add more dark sections
+const darkSections = ['home']
+
+// You could also define this more specifically if needed:
+// const sectionStyles = {
+//   home: { isDark: true },
+//   profile: { isDark: false },
+//   about: { isDark: false },
+//   project: { isDark: false },
+//   contact: { isDark: false }
+// }
+
+// Computed property to determine if current section has dark background
+const isDarkSection = computed(() => darkSections.includes(currentSection.value))
+
+// Scroll event handler to detect current section
+const handleScroll = () => {
+  const scrollPosition = window.scrollY + 100 // Add offset for navbar height
+
+  sections.forEach(section => {
+    const element = document.getElementById(section)
+    if (element) {
+      const { offsetTop, offsetHeight } = element
+      if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+        currentSection.value = section
+      }
+    }
+  })
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  handleScroll() // Initial check
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-  <header class="fixed w-full bg-[#3B060A] shadow z-50">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-white">Chae</h1>
+  <header class="fixed w-full bg-transparent z-50">
+    <nav class="px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold transition-colors duration-300" 
+          :class="isDarkSection ? 'text-white' : 'text-black'">
+        Chae
+      </h1>
       <ul class="hidden md:flex space-x-6">
         <li v-for="section in sections" :key="section">
           <a
             :href="'#' + section.toLowerCase()"
-            class="text-white hover:text-blue-600 transition"
+            class="transition-colors duration-300 hover:text-blue-600"
+            :class="isDarkSection ? 'text-white' : 'text-black'"
           >
             {{ section }}
           </a>
         </li>
       </ul>
       <!-- Mobile menu toggle -->
-      <button @click="isOpen = !isOpen" class="md:hidden text-gray-700">
+      <button @click="isOpen = !isOpen" class="md:hidden transition-colors duration-300"
+              :class="isDarkSection ? 'text-white' : 'text-black'">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 6h16M4 12h16M4 18h16"/>
@@ -33,7 +80,7 @@ const sections = ['home', 'about', 'project', 'contact']
         <li v-for="section in sections" :key="section">
           <a
             :href="'#' + section.toLowerCase()"
-            class="text-gray-700 hover:text-blue-600 transition"
+            class="text-gray-700 hover:text-blue-600 transition-colors duration-300"
             @click="isOpen = false"
           >
             {{ section }}

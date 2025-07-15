@@ -1,0 +1,42 @@
+/* assets/css/fonts.css */
+@font-face {
+  font-family: 'rampung';
+  src: url('@/public/fonts/rampung_2/Rampung.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'barber';
+  src: url('@/public/fonts/barber_chop/BarberChop.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'space_comic';
+  src: url('@/public/fonts/space_comics/SpaceComics.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bingtea';
+  src: url('@/public/fonts/bingtea/BingTea.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'komika';
+  src: url('@/public/fonts/komika_axis/KOMIKAX_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'badaboom';
+  src: url('@/public/fonts/badaboom_bb/BADABB__.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
