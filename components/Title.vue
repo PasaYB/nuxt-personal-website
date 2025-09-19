@@ -30,7 +30,7 @@
       </div>
 
       <!-- Waffle sticker (after T) -->
-      <div class="absolute right-8 -top-24 transform z-10">
+      <div class="absolute right-8 -top-25 transform z-10">
         <img
           src="/images/mpus.png"
           class="size-36 w-auto object-contain"
@@ -86,4 +86,19 @@
       <span class="text-red-400 text-xl">2013</span>
     </div> -->
   </div>
-</template> 
+</template>
+
+<style scoped>
+span {
+  color: #B22222;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+</style>

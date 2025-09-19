@@ -40,3 +40,17 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'melon-fruit';
+  src: url('@/public/fonts/melon_fruit/MelonFruit.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'windsol';
+  src: url('@/public/fonts/windsol/Windsol-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

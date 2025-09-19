@@ -1,24 +1,9 @@
+@config "../../tailwind.config.js";
 @import url('./fonts.css');
 @import "tailwindcss";
 
-.font-rampung {
-  font-family: 'rampung', serif;
-}
+/* @config "../tailwindcss.config.js"; */
 
-.font-bingtea {
-  font-family: 'bingtea', serif;
-}
-
-.font-komika {
-  font-family: 'komika', serif;
-}
-
-.font-badaboom {
-  font-family: 'badaboom', serif;
-}
-.font-barber {
-  font-family: 'barber', serif;
-}
-.font-space_comic {
-  font-family: 'space_comic', serif;
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
 }

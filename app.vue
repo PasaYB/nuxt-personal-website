@@ -2,7 +2,7 @@
 import { NuxtPage } from '#components';
 
 useHead({
-  title: 'Chae - Bojoku',
+  title: 'Portfolio - Oasa',
   meta: [
     {
       name: 'viewport',

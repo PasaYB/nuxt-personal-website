@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#B22222] w-[600px] h-[350px] rounded-3xl shadow-2xl p-8 text-white">
+    <div class="bg-firebrick w-[600px] h-[350px] rounded-3xl shadow-[15px_35px_60px_-10px_rgba(0,0,0,0.6)] p-8 text-white">
         <slot/>
         <h1 class="text-2xl font-extrabold mb-4">Where I am Fluent</h1>
         <ul class="list-none">
@@ -27,7 +27,7 @@ defineProps({
 
 <style scoped>
 .skill-progress-fill {
-  background: #FFF287;
+  background: #ffe604;
   height: 100%;
   border-radius: inherit;
   transition: width 0.3s ease;
