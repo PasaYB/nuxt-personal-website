@@ -1,19 +1,23 @@
-# Gunakan Node versi sesuai projectmu
-FROM node:22
+# Use official Node.js runtime
+FROM node:18-alpine
 
+# Set working directory
 WORKDIR /app
 
-# Copy file package.json dan lock file dulu (biar cache efisien)
+# Copy package files
 COPY package*.json ./
 
-# Install dependency
+# Install dependencies
 RUN npm install
 
-# Copy semua source code
+# Copy project files
 COPY . .
 
-# Expose port untuk dev server (default: 5173 kalau Vite)
-EXPOSE 5173
+# Build the Vue.js app
+RUN npm run build
 
-# Jalankan dev server
-CMD ["npm", "run", "dev", "--", "--host"]
+# Expose port
+EXPOSE 8080
+
+# Serve the app
+CMD ["npm", "run", "serve"]
